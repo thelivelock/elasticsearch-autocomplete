@@ -1,2 +1,1 @@
-# elasticsearch-autocomplete
-SpringBoot with ElasticSearch Autocomplete feature
+# SpringBoot Application with AutoComplete feature
