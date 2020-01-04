@@ -2,7 +2,7 @@ package com.thelivelock.elasticsearch_autocomplete.service;
 
 import com.thelivelock.elasticsearch_autocomplete.model.User;
 import com.thelivelock.elasticsearch_autocomplete.repository.UserRepository;
-import org.elasticsearch.index.query.MatchPhrasePrefixQueryBuilder;
+import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,7 @@ public class UserService {
     }
 
     public List<User> search(String keywords) {
-        MatchPhrasePrefixQueryBuilder searchByCountries = QueryBuilders.matchPhrasePrefixQuery("country", keywords);
+        MatchQueryBuilder searchByCountries = QueryBuilders.matchQuery("country", keywords);
         return this.userRepository.search(searchByCountries);
     }
 }
