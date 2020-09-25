@@ -2,18 +2,18 @@ package com.thelivelock.elasticsearch_autocomplete.service;
 
 import com.thelivelock.elasticsearch_autocomplete.model.User;
 import com.thelivelock.elasticsearch_autocomplete.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public List<User> listAll() {
         return this.userRepository.findAll();
