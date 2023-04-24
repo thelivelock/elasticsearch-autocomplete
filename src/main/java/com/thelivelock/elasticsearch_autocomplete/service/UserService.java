@@ -16,9 +16,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
+
     @Autowired
     private UserRepository userRepository;
+    
     @Autowired
     private ElasticsearchOperations elasticsearchOperations;
 
